@@ -16,7 +16,7 @@ text(5,stats$mean.diffs+0.01, paste("mean diff. =",round(stats$mean.diffs,3)), c
 text(5,stats$lower.limit+0.01, paste("+1.96 SD =",round(stats$lower.limit,3)), col="red")
 
 ##Toy Example: Miss Universe 1994 Top 10 scores by Two Judges
-dat <- read.csv("C:/Users/Anna Santiago/OneDrive/RFiles/Biostatistics Journal Club/bland-altman-demo/missu1994.csv")
+dat <- read.csv("~/missu1994.csv")
 stat <- bland.altman.stats(dat$Zapata, dat$Larue)
 
 #Bland-Altman Plot for Judge 1 vs. Judge 2
