@@ -1,22 +1,8 @@
-##Bland-Altman Plot for Automated vs. Manual Example
-
-library(BlandAltmanLeh) #To calculate mean differences and limits of agreement
-
-data <- read.csv("insert file path if csv") 
-stats <- bland.altman.stats(data$Automated, data$Manual)
-
-plot(stats$means, stats$diffs, xlim=c(0,10), ylim=c(-0.3,0.3), 
-     main="Total Retina: Bland-Altman Plot for Automated vs. Manual",  
-     pch=16, 
-     ylab=expression("Difference= Automated-Manual," ~ mm^{3}), 
-     xlab=expression("Mean=(Automated+Manual)/2," ~ mm^{3}))
-abline(h=stats$lines, lty=c(3,1,3), lwd=c(2,2,2), col=c("red", "blue", "red"))
-text(5,stats$upper.limit+0.01, paste("+1.96 SD =",round(stats$upper.limit,3)), col="red")
-text(5,stats$mean.diffs+0.01, paste("mean diff. =",round(stats$mean.diffs,3)), col="blue")
-text(5,stats$lower.limit+0.01, paste("+1.96 SD =",round(stats$lower.limit,3)), col="red")
+#install.packages("BlandAltmanLeh")
+#library(BlandAltmanLeh)
 
 ##Toy Example: Miss Universe 1994 Top 10 scores by Two Judges
-dat <- read.csv("~/missu1994.csv")
+dat <- read.csv("~/missu1994.csv") #revise based on location of data set
 stat <- bland.altman.stats(dat$Zapata, dat$Larue)
 
 #Bland-Altman Plot for Judge 1 vs. Judge 2
@@ -64,7 +50,7 @@ par(pty="s")
        ylab="Difference= Zapata-Larue", xlab="Mean=(Zapata+Larue)/2")
   abline(h=stat$lines, lty=c(3,1,3), lwd=c(2,2,2), col=c("red", "blue", "red"))
 
-dev.off()
+#dev.off()
 
 
 
