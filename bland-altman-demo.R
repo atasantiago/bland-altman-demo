@@ -1,8 +1,8 @@
 #install.packages("BlandAltmanLeh")
 #library(BlandAltmanLeh)
 
-##Toy Example: Miss Universe 1994 Top 10 scores by Two Judges
-dat <- read.csv("~/missu1994.csv") #revise based on location of data set
+##Toy Example: Miss Universe 1994 Top 10 scores by Two Judges http://www.criticalbeauty.com/2012/03/miss-universe-1994.html
+dat <- read.csv("missu1994.csv") # you can save this file from this repository
 stat <- bland.altman.stats(dat$Zapata, dat$Larue)
 
 #Bland-Altman Plot for Judge 1 vs. Judge 2
